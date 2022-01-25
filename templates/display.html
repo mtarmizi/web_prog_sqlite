@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	{% for row in rows %}
+	<div id="box">
+    	<div id="picture">
+        	<img src="../static/artwork/{{row[5]}}" width="100%" height="100%" />
+        </div>
+        <div id="art_title">
+        	{{row[1]}}
+        </div>
+        <div id="art_name">
+        	{{row[2]}}
+        </div>
+        <div id="year">
+        	{{row[4]}}
+        </div>
+        <div id="loc">
+        	{{row[3]}}
+        </div>
+    </div>
+	{% endfor %}
+	
+</body>
+</html>

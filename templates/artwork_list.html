@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+<title>Artwork List</title>
+</head>
+
+<body>
+
+	<div id="title1">
+    	<div id="title2">
+        	Artwork List
+        </div>
+        <a href="/new_artwork" class="add">
+        &plus;
+        </a>
+    </div>
+    
+    <div id="body4">
+    	<div id="row5">
+        	<div id="a1">
+            	Artwork ID
+            </div>
+        	<div id="a2">
+            	Title
+            </div>
+        	<div id="a3">
+            	Artwork Type
+            </div>
+        	<div id="a4">
+            	Year
+            </div>
+        	<div id="a1">
+            	Artist ID
+            </div>
+        	<div id="a1">
+            	Gallery ID
+            </div>
+        	<div id="a5">
+            	Edit
+            </div>
+        	<div id="a5">
+            	Delete
+            </div>
+        </div>
+        {% for row in rows %}
+        <div id="row6">
+        	<div id="a1">
+            	{{row[0]}}
+            </div>
+        	<div id="a2">
+            	{{row[1]}}
+            </div>
+        	<div id="a3">
+            	{{row[2]}}
+            </div>
+        	<div id="a4">
+            	{{row[3]}}
+            </div>
+        	<div id="a1">
+            	{{row[4]}}
+            </div>
+        	<div id="a1">
+            	{{row[5]}}
+            </div>
+        	<div id="a5">
+            	<a href='/edit_artwork/{{row[0]}}' class="ED">Edit</a>
+            </div>
+        	<div id="a5">
+            	<a href='/delete_artwork/{{row[0]}}' class="ED">Delete</a>
+            </div>
+        </div>
+		{% endfor %}
+    </div>
+
+
+</body>
+</html>

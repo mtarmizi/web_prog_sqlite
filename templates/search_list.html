@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+<title>Search List</title>
+</head>
+
+<body>
+
+	<div id="title3">
+    	Search Result
+    </div>
+
+	<div id="body1">
+    	<div id="row">
+        	<div id="s1">
+            	Artwork ID
+            </div>
+            <div id="s2">
+            	Title
+            </div>
+            <div id="s3">
+            	Artwork Type
+            </div>
+            <div id="s4">
+            	Year
+            </div>
+            <div id="s5">
+            	Artist ID
+            </div>
+            <div id="s6">
+            	Gallery ID
+            </div>
+        </div>
+        {% for row in rows %}
+    	<div id="row7">
+        	<div id="s1">
+            	{{row[0]}}
+            </div>
+            <div id="s2">
+            	{{row[1]}}
+            </div>
+            <div id="s3">
+            	{{row[2]}}
+            </div>
+            <div id="s4">
+            	{{row[3]}}
+            </div>
+            <div id="s5">
+            	{{row[4]}}
+            </div>
+            <div id="s6">
+            	{{row[5]}}
+            </div>
+        </div>
+		{% endfor %}
+    </div>
+
+</body>
+</html>

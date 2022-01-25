@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+<title>Gallery List</title>
+</head>
+
+<body>
+
+	
+	<div id="title1">
+    	<div id="title2">
+        	Gallery List
+        </div>
+        <a href="/new_gallery" class="add">
+        &plus;
+        </a>
+    </div>
+    
+    <div id="body3">
+    	<div id="row3">
+        	<div id="g1">
+            	Gallery ID
+            </div>
+        	<div id="g2">
+            	Gallery Name
+            </div>
+        	<div id="g3">
+            	Address
+            </div>
+        	<div id="g1">
+            	Contact
+            </div>
+        	<div id="g4">
+            	Edit
+            </div>
+        	<div id="g4">
+            	Delete
+            </div>
+        </div>
+        {% for row in rows %}
+        <div id="row4">
+        	<div id="g1">
+            	{{row[0]}}
+            </div>
+        	<div id="g2">
+            	{{row[1]}}
+            </div>
+        	<div id="g3">
+            	{{row[2]}}
+            </div>
+        	<div id="g1">
+            	{{row[3]}}
+            </div>
+        	<div id="g4">
+            	<a href='/edit_gallery/{{row[0]}}' class="ED">Edit</a>
+            </div>
+        	<div id="g4">
+            	<a href='/delete_gallery/{{row[0]}}' class="ED">Delete</a>
+            </div>
+        </div>
+		{% endfor %}
+    </div>
+
+</body>
+</html>

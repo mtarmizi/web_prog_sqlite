@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+<title>Admin Section</title>
+</head>
+
+<body>
+{% if session['logged_in'] %}
+	<div id="head">
+    	<div id="title">
+        	Art Gallery Management System
+        </div>
+        <div id="menu">
+        	<a href="/search" class="button active" target="mid">
+                Search
+            </a>
+        	<a href="/artist_list" class="button" target="mid">
+                Artist
+            </a>
+        	<a href="/gallery_list" class="button" target="mid">
+                Gallery
+            </a>
+        	<a href="/artwork_list" class="button" target="mid">
+                Artwork
+            </a>
+            <div class="dropdown" style="float:right;">
+              <button class="icon"></button>
+              <div class="dropdown-content">
+              <a href="#">{{session.username}}</a>
+              <a href="/new_staff">Register Staff</a>
+              <a href='/reset_password/{{session.username}}'>Reset Password</a>
+              <a href="/logout">Logout</a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <iframe src="/search" width="100%" height="500px" frameborder="0" name="mid"></iframe>
+
+    
+    <script type="text/javascript">
+		
+		
+			// Add active class to the current button (highlight it)
+			var header = document.getElementById("menu");
+			var btns = header.getElementsByClassName("button");
+			for (var i = 0; i < btns.length; i++) {
+			  btns[i].addEventListener("click", function() {
+			  var current = document.getElementsByClassName("active");
+			  current[0].className = current[0].className.replace(" active", "");
+			  this.className += " active";
+			  });
+			}
+	
+	</script>
+
+
+{% endif %}
+</body>
+</html>

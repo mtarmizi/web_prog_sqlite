@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+<title>Admin Login</title>
+</head>
+
+
+
+<body>
+
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+<a href="/home">Home</a>
+{% else %}
+
+
+
+	<form action="/login" method="POST">
+    <div id="box1">
+    	<div id="line1">
+        	Admin Login
+        </div>
+    
+    	<div id="line">
+    	Username:
+        <input type="text" name="username" value="" class="f" />
+        </div>
+        <div id="line">
+        Password:
+        <input type="password" name="password" value="" class="f" />
+        </div>
+        <div id="line">
+        <a href="/" class="back">Back</a>
+        <input type="submit" value="Login" class="login" />
+        </div>
+    
+    </div>
+    </form>
+
+
+ 
+{% endif %}
+{% endblock %}
+
+</body>
+</html>

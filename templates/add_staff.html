@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/CSS/style.css">
+<title>Add Staff</title>
+</head>
+
+<body>
+
+ {% set stat=status %}
+ 
+ 	<form action="/update_staff" method="POST">
+	<div id="box6">
+    	<div id="add1">
+        	Add Staff / Reset Password
+        </div>
+        <div id="add2">
+        	Username
+            {% if stat=="1": %}
+            <input type="text" name="username" value="{{row[0]}}" readonly class="f2"><br>
+            {% else: %}
+            <input type="text" name="username" class="f2" value="{{row[0]}}" />
+            {% endif %}
+        </div>
+        <div id="add2">
+        	Password
+            <input type="password" name="password" class="f2" value="{{row[1]}}" />
+            <input type="hidden" name="status" value="{{status}}"> 
+        </div>
+        <div id="add3">
+        	<a href="/home" class="back">Cancel</a>
+        	<input type="submit" value="Add/Update" class="submit1" />
+        </div>
+    </div>
+    </form>
+</body>
+</html>
